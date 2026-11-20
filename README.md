@@ -4,7 +4,9 @@ A deterministic, data-driven token radar: every snapshot of the protocol univers
 
 [Token Radar on make.fun](https://make.fun/c/token-radar-01) · [Competition](https://make.fun/c/token-radar-01)
 
-[![Token Radar on make.fun](https://img.shields.io/badge/make.fun-Token%20Radar-blue?logo=github)](https://make.fun/c/token-radar-01)
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/axedotid/makefun-bounty-token-radar-01/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/axedotid/makefun-bounty-token-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
 ## What it does
 
