@@ -1,39 +1,19 @@
-# Token Radar — pre-token DeFi protocols ranked by implied value
-
-A deterministic, data-driven token radar: every snapshot of the protocol universe in, a ranked board out. Reads a sealed snapshot of the DefiLlama protocol index once, scores every pre-token protocol with one published model, and writes a static dashboard (board.json + data.js + HTML/CSS/JS) that works offline (no network).
-
-[Token Radar on make.fun](https://make.fun/c/token-radar-01) · [Competition](https://make.fun/c/token-radar-01)
+# axedotid/makefun-bounty-token-radar-01
 
 [![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 [![rank](https://make.fun/badge/token-radar-01/axedotid/makefun-bounty-token-radar-01/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 [![reward](https://make.fun/badge/token-radar-01/axedotid/makefun-bounty-token-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
-## What it does
+Token Radar is a deterministic, offline token radar for pre-token DeFi protocols. It reads one sealed snapshot of the DefiLlama protocol index and scores every protocol with no token on record with a single published model — TVL x base multiple x growth multiplier x maturity multiplier — then writes a ranked board as static files: board.json, data.js, and a dashboard that renders without a network call. Live-token protocols are set aside with their market caps shown as facts, and the watchlist floor plus an early radar of smaller pre-token protocols makes up the ranked set.
 
-The radar covers the snapshot's watchlist of pre-token protocols (the floor — every protocol with at least the watchlist's TVL and no token on record) and adds an early radar of pre-token protocols below that floor, ranked by one shared implied-value model. Live-token protocols are set aside and shown with their market caps as facts, never mixed into the ranking.
+## Run it
 
-Implied value is computed from the snapshot's own figures only: TVL × base multiple × growth multiplier × maturity multiplier, with growth clamped to the snapshot, a maturity curve from the protocol's age, and the constants stated in the dashboard and changeable in the model sandbox.
-
-## Running it locally
-
-Needs Node 22.18 or later. The program reads the sealed snapshot from `/input/snapshot.json` (or `--input <file|dir>`) and writes the dashboard to `/output` (or `--output <dir>` / `MAKEFUN_OUTPUT_DIR`).
-
-```bash
-mkdir -p out
+```sh
 MAKEFUN_OUTPUT_DIR=out node main.ts --input ../input/snapshot.json
-# → board.json, data.js, dashboard (3 files), screenshots (3 images), dossier.json
 ```
 
-## Dashboard
+That writes `out/board.json`, `out/data.js`, `out/dashboard/` (index.html, app.css, app.js), `out/screenshots/` and `out/dossier.json`. Open `out/dashboard/index.html` to see the board.
 
-Open `dashboard/index.html` from the output directory — it reads `data.js` beside it and renders the ranked board, a filterable table, a per-protocol detail drawer with the model's own inputs and the protocol's farm plan. No framework, no network.
+---
 
-The `screenshots/` directory holds three captures of the dashboard: the board, a detail view, and a filtered view.
-
-## Model
-
-`lib/model.ts` holds the single shared scoring function and the model constants. Every protocol is scored by the same function — no name is special-cased, no row is hand-picked. The dashboard recomputes each row from the snapshot figures and checks it against `board.json`, so the page's code and the board's data are visibly the same arithmetic.
-
-## License
-
-MIT — see `LICENSE`.
+<sub>Entered on [make.fun](https://make.fun/?ref=fhd9q746&utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
